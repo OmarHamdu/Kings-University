@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kings University | منصتك الجامعية</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main id="authScreen" class="auth-screen">
+    <section class="auth-art">
+      <img class="auth-logo" src="logo.png" alt="شعار Kings University"
+           onerror="this.style.display='none'">
+      <div class="auth-art-copy">
+        <span class="eyebrow">مساحتك الجامعية في مكان واحد</span>
+        <h1>رحلتك الجامعية،<br><span>بشكل أذكى.</span></h1>
+        <p>ذاكر، نظّم وقتك، وشارك المعرفة مع مجتمعك الجامعي.</p>
+      </div>
+      <div class="art-decoration art-decoration-one"></div>
+      <div class="art-decoration art-decoration-two"></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-mobile-brand">
+        <img src="logo.png" alt="Kings University" onerror="this.style.display='none'">
+        <span>Kings University</span>
+      </div>
+
+      <div class="auth-box">
+        <div class="auth-heading">
+          <span class="eyebrow">أهلاً بك في Kings University</span>
+          <h2 id="authTitle">سجّل دخولك</h2>
+          <p id="authDescription">تابع دراستك وأنجز أهدافك اليوم.</p>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <label for="loginEmail">البريد الإلكتروني</label>
+          <input id="loginEmail" type="email" placeholder="name@example.com" required>
+
+          <div class="label-row">
+            <label for="loginPassword">كلمة المرور</label>
+            <button class="text-button" type="button" id="showSignup">إنشاء حساب</button>
+          </div>
+          <input id="loginPassword" type="password" placeholder="أدخل كلمة المرور" required>
+
+          <button class="primary-button full-button" type="submit">تسجيل الدخول <span>←</span></button>
+          <button class="secondary-button full-button" type="button" id="demoLogin">استكشاف المنصة كتجربة</button>
+        </form>
+
+        <form id="signupForm" class="auth-form hidden">
+          <label for="signupName">الاسم بالكامل</label>
+          <input id="signupName" type="text" placeholder="مثال: أحمد محمد" required>
+
+          <label for="signupEmail">البريد الإلكتروني</label>
+          <input id="signupEmail" type="email" placeholder="name@example.com" required>
+
+          <label for="signupUniversity">الجامعة</label>
+          <input id="signupUniversity" type="text" placeholder="اسم الجامعة" required>
+
+          <label for="signupPassword">كلمة المرور</label>
+          <input id="signupPassword" type="password" minlength="6" placeholder="6 أحرف على الأقل" required>
+
+          <button class="primary-button full-button" type="submit">إنشاء حساب <span>←</span></button>
+          <p class="switch-auth">لديك حساب؟ <button class="text-button" type="button" id="showLogin">تسجيل الدخول</button></p>
+        </form>
+
+        <p class="auth-note">هذا نموذج تجريبي لعرض التصميم، ولا ينشئ حسابًا حقيقيًا.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="appScreen" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="" onerror="this.style.display='none'">
+        <div><strong>Kings</strong><span>UNIVERSITY</span></div>
+      </div>
+
+      <div class="sidebar-label">القائمة الرئيسية</div>
+      <nav class="nav-menu">
+        <button class="nav-link active" data-view="home"><span>⌂</span> الرئيسية</button>
+        <button class="nav-link" data-view="academic"><span>▦</span> موادي وجدولي</button>
+        <button class="nav-link" data-view="library"><span>▤</span> مكتبة الملفات</button>
+        <button class="nav-link" data-view="exams"><span>✎</span> بنك الامتحانات</button>
+        <button class="nav-link" data-view="community"><span>◎</span> مجتمع الطلاب</button>
+        <button class="nav-link" data-view="opportunities"><span>↗</span> فرص وتدريبات</button>
+        <button class="nav-link" data-view="assistant"><span>✧</span> مساعد Kings AI</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <span class="upgrade-icon">✦</span>
+          <strong>خطوة صغيرة كل يوم</strong>
+          <p>استمر في التقدم، أنت تقدر!</p>
+        </div>
+        <button id="logoutButton" class="nav-link logout-link"><span>↪</span> تسجيل الخروج</button>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-button mobile-menu" aria-label="فتح القائمة">☰</button>
+        <div class="breadcrumb">Kings University <span>/</span> <strong id="currentPageName">الرئيسية</strong></div>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="icon-button" title="تبديل المظهر">◐</button>
+          <button class="icon-button notification-button" title="الإشعارات">♧<i></i></button>
+          <div class="profile-mini">
+            <div class="avatar" id="smallAvatar">أ</div>
+            <div><strong id="smallName">أحمد محمد</strong><span id="smallUniversity">طالب</span></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="view active" id="view-home">
+          <div class="welcome-row">
+            <div>
+              <span class="eyebrow">الأحد، يوم جديد للإنجاز</span>
+              <h1>أهلاً يا <span id="welcomeName">أحمد</span> 👋</h1>
+              <p>هذه لمحة سريعة عن رحلتك الأكاديمية اليوم.</p>
+            </div>
+            <button class="primary-button" data-go="academic">عرض جدولي <span>←</span></button>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-copy">
+              <span class="hero-tag">رحلتك الأكاديمية</span>
+              <h2>كل خطوة تقرّبك من هدفك 🎓</h2>
+              <p>تابع تقدمك، رتّب وقتك، وخلّ إنجازك يتكلم.</p>
+              <button class="hero-button" data-go="academic">تابع خطتك الدراسية <span>←</span></button>
+            </div>
+            <div class="progress-circle"><div><strong>٦٨٪</strong><span>إنجاز الخطة</span></div></div>
+            <div class="hero-orb"></div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-icon blue">▦</div><span>الساعات المجتازة</span><strong>72 <small>ساعة</small></strong><em>من أصل 132 ساعة</em></article>
+            <article class="stat-card"><div class="stat-icon gold">✎</div><span>اختبارات هذا الأسبوع</span><strong>3 <small>اختبارات</small></strong><em>أول اختبار بعد يومين</em></article>
+            <article class="stat-card"><div class="stat-icon green">♧</div><span>نقاطي</span><strong>1,240 <small>نقطة</small></strong><em>+120 نقطة هذا الأسبوع</em></article>
+            <article class="stat-card"><div class="stat-icon purple">◷</div><span>وقت المذاكرة</span><strong>12.5 <small>ساعة</small></strong><em>هذا الأسبوع</em></article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel schedule-panel">
+              <div class="panel-heading"><div><h3>جدول اليوم</h3><p>الأحد، 16 نوفمبر</p></div><button class="text-button" data-go="academic">عرض الجدول</button></div>
+              <div class="schedule-item"><div class="time">09:00<small>10:30</small></div><div class="schedule-color cyan"></div><div class="class-info"><strong>قواعد البيانات</strong><span>محاضرة · مدرج 2</span></div><span class="class-room">CS 304</span></div>
+              <div class="schedule-item"><div class="time">11:00<small>12:30</small></div><div class="schedule-color gold"></div><div class="class-info"><strong>هندسة البرمجيات</strong><span>سكشن · معمل 4</span></div><span class="class-room">CS 221</span></div>
+              <div class="schedule-item"><div class="time">13:00<small>14:00</small></div><div class="schedule-color purple"></div><div class="class-info"><strong>الذكاء الاصطناعي</strong><span>محاضرة · قاعة 5</span></div><span class="class-room">AI 201</span></div>
+            </section>
+
+            <section class="panel focus-panel">
+              <div class="panel-heading"><div><h3>جلسة تركيز</h3><p>ابدأ جلسة مذاكرة قصيرة</p></div><span class="tomato">🍅</span></div>
+              <div class="timer" id="timerDisplay">25:00</div>
+              <p class="timer-caption" id="timerCaption">جلسة مذاكرة — قواعد البيانات</p>
+              <div class="timer-actions">
+                <button id="timerButton" class="primary-button">ابدأ الجلسة</button>
+                <button id="resetTimer" class="icon-button" title="إعادة ضبط">↻</button>
+              </div>
+              <div class="focus-foot">🍅 <span>كل جلسة تقرّبك من هدفك</span></div>
+            </section>
+          </div>
+
+          <div class="content-grid lower-grid">
+            <section class="panel">
+              <div class="panel-heading"><div><h3>اكتشف منصتك</h3><p>أدوات تساعدك في رحلتك</p></div></div>
+              <div class="quick-links">
+                <button class="quick-link" data-go="library"><span class="quick-icon blue">▤</span><strong>مكتبة الملفات</strong><small>ملخصات ومحاضرات</small></button>
+                <button class="quick-link" data-go="exams"><span class="quick-icon gold">✎</span><strong>بنك الامتحانات</strong><small>اختبر استعدادك</small></button>
+                <button class="quick-link" data-go="assistant"><span class="quick-icon purple">✧</span><strong>Kings AI</strong><small>مساعدك الدراسي</small></button>
+                <button class="quick-link" data-go="community"><span class="quick-icon green">◎</span><strong>مجتمع الطلاب</strong><small>تعلّم مع زملائك</small></button>
+              </div>
+            </section>
+
+            <section class="panel reminder-panel">
+              <div class="panel-heading"><div><h3>تذكير مهم</h3><p>لا تفوّت مواعيدك القادمة</p></div><span class="reminder-icon">♧</span></div>
+              <div class="reminder-item"><span class="reminder-dot"></span><div><strong>اختبار قصير — قواعد البيانات</strong><small>الثلاثاء، 18 نوفمبر · 10:00 ص</small></div></div>
+              <div class="reminder-item"><span class="reminder-dot gold-dot"></span><div><strong>تسليم واجب — هندسة البرمجيات</strong><small>الخميس، 20 نوفمبر · 11:59 م</small></div></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="view-academic">
+          <div class="page-heading"><span class="eyebrow">خطتك في مكان واحد</span><h1>موادي وجدولي</h1><p>تابع محاضراتك ومواعيدك الأكاديمية.</p></div>
+          <div class="stats-grid compact-stats">
+            <article class="stat-card"><span>المواد المسجلة</span><strong>5 <small>مواد</small></strong></article>
+            <article class="stat-card"><span>الساعات هذا الفصل</span><strong>15 <small>ساعة</small></strong></article>
+            <article class="stat-card"><span>أقرب موعد</span><strong class="date-stat">18 <small>نوفمبر</small></strong></article>
+          </div>
+          <section class="panel">
+            <div class="panel-heading"><div><h3>جدول الأسبوع</h3><p>مواعيد المحاضرات والسكاشن</p></div><button class="secondary-button" id="addSchedule">＋ إضافة موعد</button></div>
+            <div class="table-wrap"><table><thead><tr><th>اليوم</th><th>الوقت</th><th>المادة</th><th>النوع</th><th>المكان</th></tr></thead><tbody>
+              <tr><td>الأحد</td><td>09:00 ص</td><td>قواعد البيانات</td><td><span class="pill">محاضرة</span></td><td>مدرج 2</td></tr>
+              <tr><td>الأحد</td><td>11:00 ص</td><td>هندسة البرمجيات</td><td><span class="pill gold-pill">سكشن</span></td><td>معمل 4</td></tr>
+              <tr><td>الاثنين</td><td>10:00 ص</td><td>الذكاء الاصطناعي</td><td><span class="pill">محاضرة</span></td><td>قاعة 5</td></tr>
+              <tr><td>الثلاثاء</td><td>12:00 م</td><td>شبكات الحاسب</td><td><span class="pill gold-pill">سكشن</span></td><td>معمل 1</td></tr>
+              <tr><td>الأربعاء</td><td>09:00 ص</td><td>تحليل وتصميم النظم</td><td><span class="pill">محاضرة</span></td><td>مدرج 1</td></tr>
+            </tbody></table></div>
+          </section>
+          <section class="panel course-panel"><div class="panel-heading"><div><h3>موادي هذا الفصل</h3><p>نظرة سريعة على تقدمك</p></div></div><div class="course-grid">
+            <article class="course-card"><span class="course-code">CS 304</span><h3>قواعد البيانات</h3><p>التقدم في المادة</p><div class="mini-progress"><i style="width:72%"></i></div><small>72% مكتمل</small></article>
+            <article class="course-card"><span class="course-code gold-code">CS 221</span><h3>هندسة البرمجيات</h3><p>التقدم في المادة</p><div class="mini-progress"><i style="width:56%"></i></div><small>56% مكتمل</small></article>
+            <article class="course-card"><span class="course-code purple-code">AI 201</span><h3>الذكاء الاصطناعي</h3><p>التقدم في المادة</p><div class="mini-progress"><i style="width:44%"></i></div><small>44% مكتمل</small></article>
+          </div></section>
+        </section>
+
+        <section class="view" id="view-library">
+          <div class="page-heading"><span class="eyebrow">معرفة زملائك بين يديك</span><h1>مكتبة الملفات</h1><p>ابحث عن محاضرات وملخصات وكتب موادك.</p></div>
+          <div class="search-row"><input id="resourceSearch" type="search" placeholder="ابحث باسم المادة أو الملف..."><button class="primary-button" id="uploadFile">＋ رفع ملف</button></div>
+          <div class="filter-row"><button class="filter active">الكل</button><button class="filter">محاضرات</button><button class="filter">ملخصات</button><button class="filter">كتب</button></div>
+          <div class="resource-grid">
+            <article class="resource-card" data-search="قواعد البيانات ملخص sql"><div class="file-icon pdf-icon">PDF</div><span class="resource-type">ملخص</span><h3>ملخص قواعد البيانات</h3><p>مراجعة شاملة — الفصل الأول</p><div class="resource-meta"><span>👤 سارة أحمد</span><span>⬇ 128</span></div><button class="secondary-button resource-action">عرض الملف</button></article>
+            <article class="resource-card" data-search="هندسة البرمجيات محاضرات"><div class="file-icon slide-icon">▤</div><span class="resource-type">محاضرات</span><h3>هندسة البرمجيات</h3><p>المحاضرات من 1 إلى 6</p><div class="resource-meta"><span>👤 عمر علي</span><span>⬇ 86</span></div><button class="secondary-button resource-action">عرض الملف</button></article>
+            <article class="resource-card" data-search="ذكاء اصطناعي كتاب"><div class="file-icon book-icon">▣</div><span class="resource-type">كتاب</span><h3>مدخل إلى الذكاء الاصطناعي</h3><p>مادة مساندة للمقرر</p><div class="resource-meta"><span>👤 إدارة المكتبة</span><span>⬇ 214</span></div><button class="secondary-button resource-action">عرض الملف</button></article>
+            <article class="resource-card" data-search="شبكات الحاسب ملخص"><div class="file-icon pdf-icon">PDF</div><span class="resource-type">ملخص</span><h3>أساسيات شبكات الحاسب</h3><p>أهم المفاهيم والمصطلحات</p><div class="resource-meta"><span>👤 مريم حسن</span><span>⬇ 64</span></div><button class="secondary-button resource-action">عرض الملف</button></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-exams">
+          <div class="page-heading"><span class="eyebrow">استعد بثقة</span><h1>بنك الامتحانات</h1><p>امتحانات سابقة وكويزات تساعدك على قياس استعدادك.</p></div>
+          <div class="exam-list">
+            <article class="exam-card"><div class="exam-symbol">✎</div><div class="exam-info"><h3>قواعد البيانات — اختبار منتصف الفصل</h3><p>الفصل الدراسي الأول · 2025 · 20 سؤالًا</p><div class="exam-tags"><span>اختيار من متعدد</span><span>30 دقيقة</span></div></div><button class="primary-button start-exam">ابدأ الاختبار <span>←</span></button></article>
+            <article class="exam-card"><div class="exam-symbol gold-symbol">✎</div><div class="exam-info"><h3>هندسة البرمجيات — كويز مراجعة</h3><p>الموضوعات: المتطلبات ونماذج التطوير · 15 سؤالًا</p><div class="exam-tags"><span>تدريب</span><span>20 دقيقة</span></div></div><button class="primary-button start-exam">ابدأ الاختبار <span>←</span></button></article>
+            <article class="exam-card"><div class="exam-symbol purple-symbol">✎</div><div class="exam-info"><h3>الذكاء الاصطناعي — امتحان سابق</h3><p>الفصل الدراسي الثاني · 2024 · 25 سؤالًا</p><div class="exam-tags"><span>امتحان سابق</span><span>45 دقيقة</span></div></div><button class="primary-button start-exam">ابدأ الاختبار <span>←</span></button></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-community">
+          <div class="page-heading"><span class="eyebrow">المعرفة تكبر بالمشاركة</span><h1>مجتمع الطلاب</h1><p>شارك سؤالًا أو فكرة مع زملائك.</p></div>
+          <section class="panel post-composer"><div class="avatar">أ</div><input id="postInput" placeholder="إيه اللي حابب تشاركه مع مجتمعك؟"><button class="primary-button" id="publishPost">نشر</button></section>
+          <div id="postsList" class="posts-list">
+            <article class="panel post-card"><div class="post-top"><div class="avatar avatar-teal">س</div><div><strong>سارة أحمد</strong><small>كلية الحاسبات · منذ ساعة</small></div><span class="post-menu">•••</span></div><p>حد عنده ترشيح لمصدر كويس لمادة قواعد البيانات؟ محتاجة أراجع SQL قبل الكويز 🙏</p><div class="post-actions"><button class="like-button">♡ إعجاب</button><button class="comment-button">♧ تعليق</button></div></article>
+            <article class="panel post-card"><div class="post-top"><div class="avatar avatar-gold">م</div><div><strong>محمد خالد</strong><small>كلية الحاسبات · منذ 3 ساعات</small></div><span class="post-menu">•••</span></div><p>رفعت ملخص المحاضرة الأخيرة لهندسة البرمجيات في المكتبة. بالتوفيق للجميع! ✨</p><div class="post-actions"><button class="like-button">♡ إعجاب</button><button class="comment-button">♧ تعليق</button></div></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-opportunities">
+          <div class="page-heading"><span class="eyebrow">خطوتك التالية تبدأ هنا</span><h1>فرص وتدريبات</h1><p>فرص تدريب ومسارات تساعدك على بناء مستقبلك المهني.</p></div>
+          <div class="opportunity-grid">
+            <article class="panel opportunity-card"><span class="opportunity-label">تدريب صيفي</span><h3>متدرب تطوير واجهات أمامية</h3><p>تدريب عملي على بناء واجهات الويب والعمل ضمن فريق.</p><div class="opportunity-meta"><span>عن بُعد</span><span>مناسب للطلاب</span></div><button class="secondary-button apply-button">تفاصيل الفرصة</button></article>
+            <article class="panel opportunity-card"><span class="opportunity-label gold-label">مسار تعليمي</span><h3>طريقك إلى تطوير الويب</h3><p>خارطة تعلم تدريجية من أساسيات HTML حتى بناء المشاريع.</p><div class="opportunity-meta"><span>6 مراحل</span><span>مبتدئ</span></div><button class="secondary-button apply-button">عرض المسار</button></article>
+            <article class="panel opportunity-card"><span class="opportunity-label purple-label">فريق طلابي</span><h3>انضم لفريق بناء المنتجات</h3><p>تعاون مع طلاب مهتمين بالتصميم والبرمجة وإدارة المشاريع.</p><div class="opportunity-meta"><span>عمل جماعي</span><span>اكتساب خبرة</span></div><button class="secondary-button apply-button">اكتشف الفريق</button></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-assistant">
+          <div class="page-heading"><span class="eyebrow">مساعدك الدراسي</span><h1>Kings AI <span class="ai-sparkle">✧</span></h1><p>اسأل، لخّص، أو اطلب خطة للمذاكرة.</p></div>
+          <div class="panel ai-panel">
+            <div class="ai-welcome"><div class="ai-logo">✧</div><h2>أهلاً! كيف أقدر أساعدك؟</h2><p>جرّب أحد الاقتراحات أو اكتب سؤالك.</p></div>
+            <div class="suggestion-row"><button class="suggestion">لخّص لي موضوعًا دراسيًا</button><button class="suggestion">أنشئ أسئلة للمراجعة</button><button class="suggestion">رتّب لي خطة مذاكرة</button></div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <form id="chatForm" class="chat-input"><input id="chatInput" placeholder="اكتب سؤالك هنا..." autocomplete="off"><button class="primary-button" type="submit">إرسال ↑</button></form>
+            <p class="ai-note">واجهة توضيحية — يلزم ربط المساعد بخدمة ذكاء اصطناعي ليعمل فعليًا.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
